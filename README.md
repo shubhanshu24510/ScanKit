@@ -33,7 +33,6 @@ dependencies {
 }
 
 ```
-
 ### Document Scanner Configuration
 Customize the document scanner user flow according to your app's requirements. The provided viewfinder and preview screen support various controls such as:
 
@@ -43,20 +42,20 @@ Customize the document scanner user flow according to your app's requirements. T
 - Instantiate GmsDocumentScannerOptions to configure the scanner options:
   
 ```cmd
---- val options = GmsDocumentScannerOptions.Builder()
+ val options = GmsDocumentScannerOptions.Builder()
     .setGalleryImportAllowed(false)
     .setPageLimit(2)
     .setResultFormats(RESULT_FORMAT_JPEG, RESULT_FORMAT_PDF)
     .setScannerMode(SCANNER_MODE_FULL)
     .build()
-    ```
+
+```
 
 ### Scan Documents
---- After configuring your GmsDocumentScannerOptions, obtain an instance of GmsDocumentScanner. You can then start the scanner activity following AndroidX Activity Result APIs.
+After configuring your GmsDocumentScannerOptions, obtain an instance of GmsDocumentScanner. You can then start the scanner activity following AndroidX Activity Result APIs.
 
 ```cmd
 val scanner = GmsDocumentScanning.getClient(options)
-
 val scannerLauncher = registerForActivityResult(StartIntentSenderForResult()) { result ->
     if (result.resultCode == RESULT_OK) {
         val result = GmsDocumentScanningResult.fromActivityResultIntent(result.data)
@@ -80,7 +79,7 @@ scanner.getStartScanIntent(activity)
         // Handle failure
     }
 
-    ```
+```
 ### Conclusion
 Integrating the ML Kit document scanner API enhances your app's functionality by providing users with a seamless document scanning experience. Experiment with the provided features and customize the scanner to meet your app's specific needs.
 
