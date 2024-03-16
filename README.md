@@ -41,13 +41,15 @@ Customize the document scanner user flow according to your app's requirements. T
 - Setting a limit to the number of pages scanned
 - Scanner mode (to control feature sets in the flow)
 - Instantiate GmsDocumentScannerOptions to configure the scanner options:
-
-val options = GmsDocumentScannerOptions.Builder()
+  
+'''cmd
+--- val options = GmsDocumentScannerOptions.Builder()
     .setGalleryImportAllowed(false)
     .setPageLimit(2)
     .setResultFormats(RESULT_FORMAT_JPEG, RESULT_FORMAT_PDF)
     .setScannerMode(SCANNER_MODE_FULL)
     .build()
+    '''
 
 ### Scan Documents
 After configuring your GmsDocumentScannerOptions, obtain an instance of GmsDocumentScanner. You can then start the scanner activity following AndroidX Activity Result APIs.
