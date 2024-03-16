@@ -80,11 +80,6 @@ scanner.getStartScanIntent(activity)
     }
 
 ```
-### Conclusion
-Integrating the ML Kit document scanner API enhances your app's functionality by providing users with a seamless document scanning experience. Experiment with the provided features and customize the scanner to meet your app's specific needs.
-
-
-This README content is based on the provided documentation for integrating the ML Kit document scanner API on Android. Adjustments can be made based on specific project requirements and preferences.
 
 ### Architecture Overview
 
@@ -113,6 +108,13 @@ The data Layer consists of repositories, which include business logic, such as q
 
 ![architecture](figure/figure4.png)
 
+
+### Conclusion
+Integrating the ML Kit document scanner API enhances your app's functionality by providing users with a seamless document scanning experience. Experiment with the provided features and customize the scanner to meet your app's specific needs.
+
+
+This README content is based on the provided documentation for integrating the ML Kit document scanner API on Android. Adjustments can be made based on specific project requirements and preferences.
+
 ## MAD Score
 ![summary](https://user-images.githubusercontent.com/24237865/102366914-84f6b000-3ffc-11eb-8d49-b20694239782.png)
 ![kotlin](https://user-images.githubusercontent.com/24237865/102366932-8a53fa80-3ffc-11eb-8131-fd6745a6f079.png)
@@ -120,4 +122,4 @@ The data Layer consists of repositories, which include business logic, such as q
 
 ## Find this repository useful? :heart:
 Support it by joining __([(https://github.com/shubhanshu24510/CameraX])__ for this repository. :star: <br>
-Also, __[follow me]([https://github.com/shubhanshu24510])__ on GitHub for my next creations! 🤩
+Also, __[follow me]__([https://github.com/shubhanshu24510])__ on GitHub for my next creations! 🤩
