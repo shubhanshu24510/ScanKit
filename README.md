@@ -16,6 +16,14 @@ Integrate the ML Kit document scanner API into  Android app to effortlessly add 
 
 ![Untitled design (1)](https://github.com/shubhanshu24510/CameraX/assets/100926922/8c2bcf8b-00fa-43a1-984f-2d8e422656b8)
 
+### Examplae Result
+
+![Screenshot (257)](https://github.com/shubhanshu24510/CameraX/assets/100926922/91718851-db9d-4035-96e6-a11e753aa6b2)
+![Screenshot (258)](https://github.com/shubhanshu24510/CameraX/assets/100926922/50a9bbce-5ec2-409e-b94a-3848e4e87e94)
+![Screenshot (259)](https://github.com/shubhanshu24510/CameraX/assets/100926922/46945277-ccc9-4309-a5c7-c3c42ee0b4b2)
+![Screenshot (260)](https://github.com/shubhanshu24510/CameraX/assets/100926922/ee4fc863-837c-4722-b528-0d42d851643e)
+![Screenshot (261)](https://github.com/shubhanshu24510/CameraX/assets/100926922/defa4641-706b-41fd-ab21-19490a483a52)
+
 ### Feature Details
 SDK Name: play-services-mlkit-document-scanner
 Implementation: Models, scanning logic, and UI flow are dynamically downloaded by Google Play services.
