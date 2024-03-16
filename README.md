@@ -26,10 +26,11 @@ Ensure that your Android app meets the following requirements:
 
 - Installation
 Add the dependency for the ML Kit document scanner library to your module's app-level build.gradle file:
+'''(
 dependencies {
     // ...
     implementation 'com.google.android.gms:play-services-mlkit-document-scanner:16.0.0-beta1'
-}
+ } ''')
 
 ### Document Scanner Configuration
 Customize the document scanner user flow according to your app's requirements. The provided viewfinder and preview screen support various controls such as:
