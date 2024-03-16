@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">  
-🗡️ Pokedex demonstrates modern Android development with Hilt, Coroutines, Flow, Jetpack (Room, ViewModel), and Material Design based on MVVM architecture.
+CameraX is a document scanner App scan image using Google Machine Learing Kit as a modern Android development with Hilt, Coroutines, Flow, Jetpack (Room, ViewModel), and Material Design based on MVVM architecture.
 </p>
 </br>
 
