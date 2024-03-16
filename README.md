@@ -11,33 +11,33 @@ Integrate the ML Kit document scanner API into your Android app to effortlessly 
 </p>
 </br>
 
-- Feature Details
--SDK Name: play-services-mlkit-document-scanner
--Implementation: Models, scanning logic, and UI flow are dynamically downloaded by Google Play services.
--App Size Impact: Approximately 300KB download size increase.
--Initialization Time: Users may experience a brief delay as models, logic, and UI flow are downloaded before first use.
+### Feature Details
+SDK Name: play-services-mlkit-document-scanner
+Implementation: Models, scanning logic, and UI flow are dynamically downloaded by Google Play services.
+App Size Impact: Approximately 300KB download size increase.
+Initialization Time: Users may experience a brief delay as models, logic, and UI flow are downloaded before first use.
 
-## Tech stack & Open-source libraries
+### Tech stack & Open-source libraries
 Before You Begin
 Ensure that your Android app meets the following requirements:
 
--Minimum SDK Version: Android API level 21 or above.
--In your project-level build.gradle file, include Google's Maven repository in both buildscript and allprojects sections.
+- Minimum SDK Version: Android API level 21 or above.
+- In your project-level build.gradle file, include Google's Maven repository in both buildscript and allprojects sections.
 
-Installation
+- Installation
 Add the dependency for the ML Kit document scanner library to your module's app-level build.gradle file:
 dependencies {
     // ...
     implementation 'com.google.android.gms:play-services-mlkit-document-scanner:16.0.0-beta1'
 }
 
-Document Scanner Configuration
+### Document Scanner Configuration
 Customize the document scanner user flow according to your app's requirements. The provided viewfinder and preview screen support various controls such as:
 
--Importing from the photo gallery
--Setting a limit to the number of pages scanned
--Scanner mode (to control feature sets in the flow)
--Instantiate GmsDocumentScannerOptions to configure the scanner options:
+- Importing from the photo gallery
+- Setting a limit to the number of pages scanned
+- Scanner mode (to control feature sets in the flow)
+- Instantiate GmsDocumentScannerOptions to configure the scanner options:
 
 val options = GmsDocumentScannerOptions.Builder()
     .setGalleryImportAllowed(false)
@@ -46,7 +46,7 @@ val options = GmsDocumentScannerOptions.Builder()
     .setScannerMode(SCANNER_MODE_FULL)
     .build()
 
-Scan Documents
+### Scan Documents
 After configuring your GmsDocumentScannerOptions, obtain an instance of GmsDocumentScanner. You can then start the scanner activity following AndroidX Activity Result APIs.
 
 val scanner = GmsDocumentScanning.getClient(options)
@@ -74,7 +74,7 @@ scanner.getStartScanIntent(activity)
         // Handle failure
     }
 
-Conclusion
+### Conclusion
 Integrating the ML Kit document scanner API enhances your app's functionality by providing users with a seamless document scanning experience. Experiment with the provided features and customize the scanner to meet your app's specific needs.
 
 
@@ -107,26 +107,11 @@ The data Layer consists of repositories, which include business logic, such as q
 
 ![architecture](figure/figure4.png)
 
-**Pokedex** adopted modularization strategies below:
-
-- **Reusability**: Modulizing reusable codes properly enable opportunities for code sharing and limits code accessibility in other modules at the same time.
-- **Parallel Building**: Each module can be run in parallel and it reduces the build time.
-- **Strict visibility control**: Modules restrict to expose dedicated components and access to other layers, so it prevents they're being used outside the module
-- **Decentralized focusing**: Each developer team can assign their dedicated module and they can focus on their own modules.
-
-For more information, check out the [Guide to Android app modularization](https://developer.android.com/topic/modularization).
-
 ## MAD Score
 ![summary](https://user-images.githubusercontent.com/24237865/102366914-84f6b000-3ffc-11eb-8d49-b20694239782.png)
 ![kotlin](https://user-images.githubusercontent.com/24237865/102366932-8a53fa80-3ffc-11eb-8131-fd6745a6f079.png)
 
-## Open API
-
-<img src="https://user-images.githubusercontent.com/24237865/83422649-d1b1d980-a464-11ea-8c91-a24fdf89cd6b.png" align="right" width="21%"/>
-
-Pokedex using the [PokeAPI](https://pokeapi.co/) for constructing RESTful API.<br>
-PokeAPI provides a RESTful API interface to highly detailed objects built from thousands of lines of data related to Pokémon.
 
 ## Find this repository useful? :heart:
-Support it by joining __[stargazers](https://github.com/skydoves/Pokedex/stargazers)__ for this repository. :star: <br>
-Also, __[follow me](https://github.com/skydoves)__ on GitHub for my next creations! 🤩
+Support it by joining __([(https://github.com/shubhanshu24510/CameraX])__ for this repository. :star: <br>
+Also, __[follow me]([https://github.com/shubhanshu24510])__ on GitHub for my next creations! 🤩
