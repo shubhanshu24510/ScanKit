@@ -13,8 +13,8 @@ Integrate the ML Kit document scanner API into  Android app to effortlessly add 
 </br>
 
 ### Preview
-![mode_base_with_filter](https://github.com/shubhanshu24510/CameraX/assets/100926922/d5f09fdf-0250-481b-89aa-fbe040759e2d)
 
+![Untitled design](https://github.com/shubhanshu24510/CameraX/assets/100926922/12654fd2-9e77-4acd-b321-9ed1695fae08)
 
 
 ### Feature Details
