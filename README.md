@@ -1,4 +1,5 @@
-<h1 align="center">CameraXScanner</h1>
+<h1 align="center">Document Scanner with ML Kit on Android
+</h1>
 
 <p align="center">
   <a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"/></a>
@@ -6,7 +7,7 @@
 </p>
 
 <p align="center">  
-CameraX is a document scanner App scan image using Google Machine Learing Kit as a modern Android development with Hilt, Coroutines, Flow, Jetpack (Room, ViewModel), and Material Design based on MVVM architecture.
+Integrate the ML Kit document scanner API into your Android app to effortlessly add a document scanning feature. This guide provides details on implementation, usage, and customization options for the document scanner.
 </p>
 </br>
 
@@ -16,29 +17,74 @@ CameraX is a document scanner App scan image using Google Machine Learing Kit as
 
 <img src="/previews/preview.gif" align="right" width="320"/>
 
+- Feature Details
+-SDK Name: play-services-mlkit-document-scanner
+-Implementation: Models, scanning logic, and UI flow are dynamically downloaded by Google Play services.
+-App Size Impact: Approximately 300KB download size increase.
+-Initialization Time: Users may experience a brief delay as models, logic, and UI flow are downloaded before first use.
+
 ## Tech stack & Open-source libraries
-- Minimum SDK level 24
-- [Kotlin](https://kotlinlang.org/) based, [Coroutines](https://github.com/Kotlin/kotlinx.coroutines) + [Flow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/) for asynchronous.
-- Jetpack
-  - Lifecycle: Observe Android lifecycles and handle UI states upon the lifecycle changes.
-  - ViewModel: Manages UI-related data holder and lifecycle aware. Allows data to survive configuration changes such as screen rotations.
-  - DataBinding: Binds UI components in your layouts to data sources in your app using a declarative format rather than programmatically.
-  - Room: Constructs Database by providing an abstraction layer over SQLite to allow fluent database access.
-  - [Hilt](https://dagger.dev/hilt/): for dependency injection.
-- Architecture
-  - MVVM Architecture (View - DataBinding - ViewModel - Model)
-  - Repository Pattern
-- [Material-Components](https://github.com/material-components/material-components-android): Material design components for building ripple animation, and CardView.
+Before You Begin
+Ensure that your Android app meets the following requirements:
 
-## Architecture
-**Pokedex** is based on the MVVM architecture and the Repository pattern, which follows the [Google's official architecture guidance](https://developer.android.com/topic/architecture).
+-Minimum SDK Version: Android API level 21 or above.
+-In your project-level build.gradle file, include Google's Maven repository in both buildscript and allprojects sections.
 
-![architecture](figure/figure0.png)
+Installation
+Add the dependency for the ML Kit document scanner library to your module's app-level build.gradle file:
+dependencies {
+    // ...
+    implementation 'com.google.android.gms:play-services-mlkit-document-scanner:16.0.0-beta1'
+}
 
-The overall architecture of **Pokedex** is composed of two layers; the UI layer and the data layer. Each layer has dedicated components and they have each different responsibilities, as defined below:
+Document Scanner Configuration
+Customize the document scanner user flow according to your app's requirements. The provided viewfinder and preview screen support various controls such as:
 
-**Pokedex** was built with [Guide to app architecture](https://developer.android.com/topic/architecture), so it would be a great sample to show how the architecture works in real-world projects.
+-Importing from the photo gallery
+-Setting a limit to the number of pages scanned
+-Scanner mode (to control feature sets in the flow)
+-Instantiate GmsDocumentScannerOptions to configure the scanner options:
 
+val options = GmsDocumentScannerOptions.Builder()
+    .setGalleryImportAllowed(false)
+    .setPageLimit(2)
+    .setResultFormats(RESULT_FORMAT_JPEG, RESULT_FORMAT_PDF)
+    .setScannerMode(SCANNER_MODE_FULL)
+    .build()
+
+Scan Documents
+After configuring your GmsDocumentScannerOptions, obtain an instance of GmsDocumentScanner. You can then start the scanner activity following AndroidX Activity Result APIs.
+
+val scanner = GmsDocumentScanning.getClient(options)
+
+val scannerLauncher = registerForActivityResult(StartIntentSenderForResult()) { result ->
+    if (result.resultCode == RESULT_OK) {
+        val result = GmsDocumentScanningResult.fromActivityResultIntent(result.data)
+        result.getPages()?.let { pages ->
+            for (page in pages) {
+                val imageUri = pages.get(0).getImageUri()
+            }
+        }
+        result.getPdf()?.let { pdf ->
+            val pdfUri = pdf.getUri()
+            val pageCount = pdf.getPageCount()
+        }
+    }
+}
+
+scanner.getStartScanIntent(activity)
+    .addOnSuccessListener { intentSender ->
+        scannerLauncher.launch(IntentSenderRequest.Builder(intentSender).build())
+    }
+    .addOnFailureListener { exception ->
+        // Handle failure
+    }
+
+Conclusion
+Integrating the ML Kit document scanner API enhances your app's functionality by providing users with a seamless document scanning experience. Experiment with the provided features and customize the scanner to meet your app's specific needs.
+
+
+This README content is based on the provided documentation for integrating the ML Kit document scanner API on Android. Adjustments can be made based on specific project requirements and preferences.
 
 ### Architecture Overview
 
@@ -62,9 +108,6 @@ The UI layer consists of UI elements to configure screens that could interact wi
 ![architecture](figure/figure3.png)
 
 The data Layer consists of repositories, which include business logic, such as querying data from the local database and requesting remote data from the network. It is implemented as an offline-first source of business logic and follows the [single source of truth](https://en.wikipedia.org/wiki/Single_source_of_truth) principle.<br>
-
-**Pokedex** is an offline-first app is an app that is able to perform all, or a critical subset of its core functionality without access to the internet. 
-So users don't need to be up-to-date on the network resources every time and it will decrease users' data consumption. For further information, you can check out [Build an offline-first app](https://developer.android.com/topic/architecture/data-layer/offline-first).
 
 ## Modularization
 
@@ -93,20 +136,3 @@ PokeAPI provides a RESTful API interface to highly detailed objects built from t
 ## Find this repository useful? :heart:
 Support it by joining __[stargazers](https://github.com/skydoves/Pokedex/stargazers)__ for this repository. :star: <br>
 Also, __[follow me](https://github.com/skydoves)__ on GitHub for my next creations! 🤩
-
-# License
-```xml
-Designed and developed by 2022 skydoves (Jaewoong Eum)
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-```
