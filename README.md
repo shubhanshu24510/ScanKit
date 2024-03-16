@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">  
-Integrate the ML Kit document scanner API into your Android app to effortlessly add a document scanning feature. This guide provides details on implementation, usage, and customization options for the document scanner.
+Integrate the ML Kit document scanner API into  Android app to effortlessly add a document scanning feature. This guide provides details on implementation, usage, and customization options for the document scanner.
 </p>
 </br>
 
