@@ -81,10 +81,11 @@ scanner.getStartScanIntent(activity)
 
 ```
 
-### Architecture Overview
 
-![architecture](figure/figure1.png)
+###Architecture Overview
 
+ ![figure1](https://github.com/shubhanshu24510/CameraX/assets/100926922/e51a219d-cb16-4a5b-8eb4-f01cc80fbdbd)
+ 
 - Each layer follows [unidirectional event/data flow](https://developer.android.com/topic/architecture/ui-layer#udf); the UI layer emits user events to the data layer, and the data layer exposes data as a stream to other layers.
 - The data layer is designed to work independently from other layers and must be pure, which means it doesn't have any dependencies on the other layers.
 
@@ -92,22 +93,17 @@ With this loosely coupled architecture, you can increase the reusability of comp
 
 ### UI Layer
 
-![architecture](figure/figure2.png)
+![architecture](figure/figure2.![figure2](https://github.com/shubhanshu24510/CameraX/assets/100926922/8a92c457-bdfd-4e95-857f-59cb0dce98b9)
+png)
 
 The UI layer consists of UI elements to configure screens that could interact with users and [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) that holds app states and restores data when configuration changes.
 - UI elements observe the data flow via [DataBinding](https://developer.android.com/topic/libraries/data-binding), which is the most essential part of the MVVM architecture. 
 - With [Bindables](https://github.com/skydoves/bindables), which is an Android DataBinding kit for notifying data changes, you can implement two-way binding, and data observation in XML very clean.
 
 ### Data Layer
-
-![architecture](figure/figure3.png)
+![figure3](https://github.com/shubhanshu24510/CameraX/assets/100926922/a8bcbac0-18eb-403a-8d03-bb5ae2847d1e)
 
 The data Layer consists of repositories, which include business logic, such as querying data from the local database and requesting remote data from the network. It is implemented as an offline-first source of business logic and follows the [single source of truth](https://en.wikipedia.org/wiki/Single_source_of_truth) principle.<br>
-
-## Modularization
-
-![architecture](figure/figure4.png)
-
 
 ### Conclusion
 Integrating the ML Kit document scanner API enhances your app's functionality by providing users with a seamless document scanning experience. Experiment with the provided features and customize the scanner to meet your app's specific needs.
