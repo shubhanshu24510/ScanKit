@@ -2,7 +2,8 @@
 </h1>
 
 <p align="center">
-  <a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"/></a>
+  <a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" ![mode_base](https://github.com/shubhanshu24510/CameraX/assets/100926922/7d2a2479-41ed-4b73-b92d-486275f5c4f9)
+src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"/></a>
   <a href="https://android-arsenal.com/api?level=21"><img alt="API" src="https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat"/></a>
 </p>
 
@@ -10,6 +11,11 @@
 Integrate the ML Kit document scanner API into  Android app to effortlessly add a document scanning feature. This guide provides details on implementation, usage, and customization options for the document scanner.
 </p>
 </br>
+
+### Preview
+![mode_base](https://github.com/shubhanshu24510/CameraX/assets/100926922/![mode_base_with_filter](https://github.com/shubhanshu24510/CameraX/assets/100926922/f4c718ad-af18-434d-adb6-744576fd00f0)
+a26419a0-15ae-4123-9951-8d9fb734bde7)
+
 
 ### Feature Details
 SDK Name: play-services-mlkit-document-scanner
