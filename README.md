@@ -82,7 +82,7 @@ scanner.getStartScanIntent(activity)
 ```
 
 
-###Architecture Overview
+### Architecture Overview
 
  ![figure1](https://github.com/shubhanshu24510/CameraX/assets/100926922/e51a219d-cb16-4a5b-8eb4-f01cc80fbdbd)
  
