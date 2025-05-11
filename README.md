@@ -107,14 +107,16 @@ scanner.getStartScanIntent(activity)
 
 ## 🧱 Architecture Overview
 
-Task Reminder follows MVVM + Repository pattern:
+- Clean MVVM architecture with unidirectional data flow.
+- Loosely coupled layers for easy testing and scalability.
+- UI communicates with ViewModel → ViewModel fetches data via Repository.
 
 ### 🧩 UI Layer
 ![UI Layer](https://github.com/user-attachments/assets/80d123e6-e72b-4ca8-998b-a9edec78ae19)
 
-- Built with Compose
-- ViewModels observe state via Flows
-- Navigation and theming handled via Compose APIs
+- ViewModel + DataBinding
+- Uses Bindables for two-way data binding.
+- Configuration changes are gracefully handled.
 
 ### 🔄 Data Layer
 ![Data Layer](https://github.com/user-attachments/assets/0bdebc42-69a1-41a2-ad8f-d57d3cbf9124)
@@ -122,16 +124,11 @@ Task Reminder follows MVVM + Repository pattern:
 - Offline-first using Room
 - Repository pattern ensures single source of truth
 - Clean separation between local and external sources
+- Repositories handle business logic and act as single source of truth.
+- Offline-first design using local caching and potential future cloud integration.
 
 ### 📐 Architecture Diagram
 ![Overall Architecture](https://github.com/user-attachments/assets/29f555f6-2339-40dc-899c-79835b0c7fb7)
-
-## 🧩 Modularization Strategy
-
-- 🧬 **Reusability**: Common logic abstracted in shared modules
-- 🚀 **Parallel Builds**: Modules build independently
-- 🔐 **Strict Access Control**: Scoped visibility and encapsulation
-- 👥 **Team Focused**: Better code ownership
 
 More on modularization: [Google Guide](https://developer.android.com/topic/modularization)
 ---
