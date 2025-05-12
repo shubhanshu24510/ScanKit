@@ -139,11 +139,21 @@ More on modularization: [Google Guide](https://developer.android.com/topic/modul
 ### 🧾 Conclusion
 By integrating ML Kit's Document Scanner, your app gains a seamless, native scanning experience powered by Google Play services. With flexible configuration and minimal setup, you can deliver high-quality scanning to your users.
 
+---
 
-### ❤️ Support This Project?
-If this repo helped you:
+## 🤝 Support
 
-### ⭐ Star this project
+If you like this project, please consider ⭐ starring the repo and following me for more cool Android projects!
+
+☕ You can also support my work by buying me a coffee:
+
+<p align="left">
+  <a href="https://buymeacoffee.com/shubhanshu24510" target="_blank">
+    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="60" width="217">
+  </a>
+</p>
+
+---
 
 👨‍💻 Follow @shubhanshu24510 for more cool projects
 Copyright 2025 Shubhanshu Singh
